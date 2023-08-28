@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Biblioteca.Models.Libro>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Libros</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">
+        <i class="fas fa-plus-circle"></i> Crear Nuevo
+    </a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Título)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Autor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Género)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AñoPublicación)
+            </th>
+            <th>
+                Acciones
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Título)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Autor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Género)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AñoPublicación)
+            </td>
+            <td>
+
+                    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">
+                        <i class="fas fa-pencil-alt"></i> Editar
+                    </a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">
+                        <i class="fas fa-info-circle"></i> Detalles
+                    </a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">
+                        <i class="fas fa-trash-alt"></i> Eliminar
+                    </a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

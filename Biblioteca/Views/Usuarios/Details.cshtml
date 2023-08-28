@@ -1,0 +1,48 @@
+﻿@model Biblioteca.Models.Usuario
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="row align-items-center">
+    <div class="col-md-2 mt-4 text-center">
+        <a asp-action="Index" class="btn btn-secondary">
+            <i class="fas fa-arrow-left"></i> Volver a la Lista
+        </a>
+    </div>
+    <div class="col-md-8 mt-4">
+        <h1 class="text-center">Detalle usuario</h1>
+    </div>
+</div>
+<hr />
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <dl>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Nombre)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Direccion)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Direccion)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.NumeroTelefono)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.NumeroTelefono)
+                </dd>
+            </dl>
+        <div class="form-group text-center">
+        <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model?.Id">
+            <i class="fas fa-pencil-alt"></i> Editar
+        </a>
+        </div>
+        </div>
+    </div>
+
+  
